@@ -1,0 +1,8 @@
+http://localhost:8080/SOAPMuseumService/services/Museum_server?wsdl
+
+
+http://localhost:8080/SOAPMuseumServiceClient/sampleMuseum_serverProxy/TestClient.jsp?endpoint=http://localhost:13635/SOAPMuseumService/services/Museum_server
+
+Nota: Per cambiare la porta di default sul Server Tomcat embedd. Cicckare ue volte sul Server...
+      Si apre un tab con la configuraizone sulla quale si può cambiare le porte .
+      Facendo restart il server chiede automaticamente di cambiare configuraizone .

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.museum.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.museum.com" xmlns:intf="http://services.museum.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.museum.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getMuseumHour">
+    <complexType>
+     <sequence>
+      <element name="idMuseum" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMuseumHourResponse">
+    <complexType>
+     <sequence>
+      <element name="getMuseumHourReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getMuseumHourRequest">
+
+      <wsdl:part element="impl:getMuseumHour" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMuseumHourResponse">
+
+      <wsdl:part element="impl:getMuseumHourResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Museum_server">
+
+      <wsdl:operation name="getMuseumHour">
+
+         <wsdl:input message="impl:getMuseumHourRequest" name="getMuseumHourRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMuseumHourResponse" name="getMuseumHourResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Museum_serverSoapBinding" type="impl:Museum_server">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getMuseumHour">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMuseumHourRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMuseumHourResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Museum_serverService">
+
+      <wsdl:port binding="impl:Museum_serverSoapBinding" name="Museum_server">
+
+         <wsdlsoap:address location="http://localhost:8080/SOAPMuseumService/services/Museum_server"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
